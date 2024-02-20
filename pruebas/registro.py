@@ -56,14 +56,14 @@ def realizar_registro(usuario, contraseña, email):
             nuevo_usuario = {"nombre": usuario, "contraseña": contraseña, "email": email, "puntuacion": 0}
             mycollection.insert_one(nuevo_usuario)
             print(f"Registro exitoso para el usuario {usuario}.")
-
+            switch_to_login()  # Cambiar a la pantalla de inicio de sesión después del registro
 
     except Exception as e:
         print(f"Error al conectar a MongoDB local: {str(e)}")
 
 
 def switch_to_login():
-    import login  
+    import login as login  
     login.main()  
 
 def main():

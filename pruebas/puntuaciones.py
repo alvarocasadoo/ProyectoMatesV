@@ -35,6 +35,12 @@ for user in mycollection.find():
     else:
         scores_data.append((user["nombre"], 0))  # Asignar puntuación 0 si el campo "puntuacion" no está presente
 
+# Ordenar las puntuaciones de mayor a menor
+scores_data.sort(key=lambda x: x[1], reverse=True)
+
+# Seleccionar solo las mejores 5 puntuaciones
+top_scores_data = scores_data[:5]
+
 # Altura y margen de las filas de la tabla de puntuaciones
 row_height = 50
 row_margin = 10
@@ -53,9 +59,9 @@ while running:
     screen.blit(label_surface, label_rect)
 
     # Dibujar los datos de la tabla de puntuaciones
-    for i, (player, score) in enumerate(scores_data):
+    for i, (player, score) in enumerate(top_scores_data):
         # Calcular la posición y el rectángulo de cada fila
-        row_y = height // 2 + i * (row_height + row_margin) - len(scores_data) * (row_height + row_margin) // 2
+        row_y = height // 2 + i * (row_height + row_margin) - len(top_scores_data) * (row_height + row_margin) // 2
         row_rect = pygame.Rect(100, row_y, width - 200, row_height)
 
         # Dibujar el rectángulo de la fila

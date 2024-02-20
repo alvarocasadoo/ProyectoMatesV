@@ -69,7 +69,7 @@ def switch_to_puntuaciones():
 
 # Función para cambiar a la pantalla de minijuegos
 def switch_to_registro():
-    import registro  # Importa el módulo que contiene la pantalla de minijuegos
+    import registro as registro  # Importa el módulo que contiene la pantalla de minijuegos
     registro.main()  # Llama a la función main() del módulo minijuegos
 
 

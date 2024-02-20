@@ -30,15 +30,18 @@ def abrir_ventana_problemas():
     print("Abriendo juego de problemas")
 
 def abrir_ventana_puzzles():
-    # Aquí va la lógica para abrir la ventana del juego de puzzles
+    import elegirDificultadPuzzles
+    elegirDificultadPuzzles.main()
     print("Abriendo juego de puzzles")
 
 def abrir_ventana_laberintos():
-    # Aquí va la lógica para abrir la ventana del juego de laberintos
+    import elegirDificultadLaberinto
+    elegirDificultadLaberinto.main()
     print("Abriendo juego de laberintos")
 
 def abrir_ventana_memoria():
-    # Aquí va la lógica para abrir la ventana del juego de memoria
+    import elegirDificultadMemoria
+    elegirDificultadMemoria.main()
     print("Abriendo juego de memoria")
 
 # Inicializar los botones y otros elementos

@@ -27,7 +27,7 @@ button_height = 50
 button_margin = 20
 
 # Texto para la etiqueta de selección de dificultad
-label_text = "Elige la dificultad del problema"
+label_text = "Elige la dificultad del laberinto"
 
 # Obtener el rectángulo de la etiqueta de selección de dificultad
 label_surface = font.render(label_text, True, (255, 255, 255))
@@ -52,15 +52,15 @@ while running:
                     print(f"Dificultad seleccionada: {button_text}")
 
                     # Lógica para abrir el juego correspondiente según la dificultad seleccionada
-                    import problemasFacil  
-                    import problemasMedio  
-                    import problemasDificil  
                     if button_text == "Fácil":
-                        problemasFacil.main()  # Llamar a la función main() del script problemasFacil.py
+                        import laberintoFacil
+                        laberintoFacil.main()  # Llamar a la función main() del script problemasFacil.py
                     elif button_text == "Media":
-                        problemasMedio.main()  # Llamar a la función main() del script problemasMedia.py
+                        import laberintoMedio
+                        laberintoMedio.main()  # Llamar a la función main() del script problemasMedia.py
                     elif button_text == "Difícil":
-                        problemasDificil.main()  # Llamar a la función main() del script problemasDificil.py
+                        import laberintoDificil
+                        laberintoDificil.main()  # Llamar a la función main() del script problemasDificil.py
 
     # Dibujar el degradado en el fondo
     for y in range(height):
